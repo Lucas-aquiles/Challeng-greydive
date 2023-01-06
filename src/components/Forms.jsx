@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 
 export const Forms = () => {
   const [state, setState] = useState({});
+  const [modal,setModal] = useState(false)
+  console.log(modal)
   const { value} = useContext(contextApp);
   const setValue = value[1]
 
@@ -22,9 +24,14 @@ export const Forms = () => {
     const response = await addDoc(collection(db, "user"), docData);
   }
 
+  function screenModal(){
+    setModal(!modal)
+  }
+
   return (
-    <div className="w-full h-screen	 border-2 bg-orange-500">
-      <h1 className="text-2xl font-bold underline">Formulario</h1>
+    <div className="w-full h-screen	 border-2 bg-gray-800">
+      <div className="mx-auto w-2/5	mt-10">   
+      <h1 className="text-3xl font-bold  text-slate-200 mt-5 mb-10	">Formulario</h1>
 
       <Formik
         initialValues={{
@@ -61,7 +68,7 @@ export const Forms = () => {
           <form onSubmit={handleSubmit}>
             {arrayState?.map((e) => (
               <div key={e.name}>
-                <p>{e.label} </p>
+                <p className=" text-2xl my-6 text-slate-300">{e.label} </p>
                 <Inputs
                   type={e.type}
                   name={e.name}
@@ -72,18 +79,19 @@ export const Forms = () => {
                 />
               </div>
             ))}
-              <div>Mostrar </div>
 
-            <button type="submit" disabled={isSubmitting}>
-              Enviar
+              <div  className=" text-2xl  text-slate-300 cursor-pointer" onClick={screenModal} >Enviar</div>
+              <div className= { `text-2xl ${modal === true ? 'hidden' : ''}`} >  
+            <button   className=" text-2xl  text-slate-300" type="submit" disabled={isSubmitting}>
+              Confirmar
             </button>
-            <div>  
-            <Link to ="/information"> ir </Link>
+           
+            <Link className=" text-2xl  text-slate-300" to ="/information"> Ir a resultados </Link>
             </div>
           </form>
         )}
       </Formik>
-      
+      </div>
     </div>
   );
 };

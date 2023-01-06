@@ -11,7 +11,6 @@ function App() {
     <Routes>  
     <Route path="/" element={<Forms/>} />
     <Route path="/Information" element={<PageAux />} />
-
     </Routes>
     
   );
