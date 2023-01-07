@@ -35,9 +35,9 @@ export const Forms = () => {
   };
 
   return (
-    <div className="w-full h-screen	 border-2 bg-gray-800">
-      <div className="mx-auto w-2/5	mt-5">
-        <h1 className="text-3xl font-bold  text-slate-200 mt-2 mb-10	">
+    <div className="w-full h-screen relative	 bg-gray-300 flex items-center ">
+      <div className="mx-auto w-2/5 px-7  bg-black-example  rounded-md">
+        <h1 className="text-2xl font-bold  text-slate-200 	mt-5">
           Formulario
         </h1>
 
@@ -96,7 +96,7 @@ export const Forms = () => {
             <form  className=" flex flex-col outline-none"   onSubmit={handleSubmit}>
               {arrayState?.map((e) => (
                 <div key={e.name}>
-                  <p className=" text-2xl my-3 text-slate-300">{e.label} </p>
+                  <p className=" text-1xl my-1 text-slate-300">{e.label} </p>
                   <Inputs
                     type={e.type}
                     name={e.name}
@@ -107,7 +107,7 @@ export const Forms = () => {
                     
                   />
                   {errors[e.name]  ? (
-                  <p className="bg-slate-300">{errors[e.name]}</p>
+                  <p className="text-green-example">{errors[e.name]}</p>
                 ) : null}
                 
 
@@ -115,7 +115,7 @@ export const Forms = () => {
               ))}
 
               <button
-                className=" text-2xl rounded-2xl bg-slate-500 p-2     text-slate-300 cursor-pointer hover:text-pink-800  hover:bg-slate-300"
+                className=" text-2xl rounded-2xl bg-green-example mb-5 h-10    text-slate-300 cursor-pointer hover:text-green-example  hover:bg-slate-300"
                 type="submit"
                 disabled={isSubmitting}
               >
@@ -136,7 +136,7 @@ export const Forms = () => {
             className={`text-2xl ${
               modal === false
                 ? "hidden"
-                : "bg-gray-800 w-2/4	 h-1/3 mx-auto cursor-auto"
+                : "bg-black-example w-2/4	 h-1/3 mx-auto cursor-auto rounded-md"
             }`}
             onClick={stopProp}
           >
@@ -147,7 +147,7 @@ export const Forms = () => {
               </h3>
 
               <Link
-                className=" text-2xl rounded-md text-slate-300 hover:bg-gray-600 mt-8"
+                className=" text-2xl rounded-3xl text-slate-300 hover:bg-green-example p-2 mt-8"
                 to="/information"
               >
                 {" "}
