@@ -1,14 +1,16 @@
 import React from "react";
 
-export const Inputs = ({ type, name, value, onChange, onBlur, options }) => {
+export const Inputs = ({ type, name, value, onChange, onBlur, options,error }) => {
   return type !== "select" ? (
-    <input
+    <>     <input
       className="w-full  h-10 rounded-lg"
       type={type}
       name={name}
       onChange={onChange}
       onBlur={onBlur}
     />
+    
+    </>
   ) : (
     <select className="w-full h-10 rounded-lg " name={name} onChange={onChange}>
       {options?.map((e) => (

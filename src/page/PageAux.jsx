@@ -24,14 +24,14 @@ const PageAux = () => {
 
   return (
     <div className="w-full  h-screen bg-gray-800 flex items-center  ">
-      <div className="mx-auto text-slate-200  w-96 border-2 p-10 ">   
-      <h2>Tus Datos</h2>
-      <p>Nombre Completo : {state.full_name} </p>
-      <p>Email : {state.email} </p>
-      <p>fecha de nacimiento : {state.birth_date} </p>
-      <p> País de Origen : {state.country_of_origin}</p>
+      <div className="mx-auto text-slate-200  w-96 border-2 p-10 relative">   
+      <h2 className="text-3xl	">Tus Datos</h2>
+      <p className="p-2">Nombre Completo : {state.full_name} </p>
+      <p className="p-2">Email : {state.email} </p>
+      <p className="p-2">Fecha de nacimiento : {state.birth_date} </p>
+      <p className="p-2"> País de Origen : {state.country_of_origin}</p>
 
-      <Link to="/">Atras</Link>
+      <Link className="absolute p-1 right-5 rounded-3xl bg-slate-200 text-gray-800 hover:bg-gray-900 hover:text-slate-100" to="/">Atras</Link>
       </div>
     </div>
   );
