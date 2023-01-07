@@ -3,7 +3,7 @@ import data from "../assets/items.json";
 import { Formik } from "formik";
 import { Inputs } from "../hook/Inputs";
 import { db } from "../api/firebase-config";
-import { doc, setDoc, addDoc, collection } from "firebase/firestore";
+import {  addDoc, collection } from "firebase/firestore";
 import { contextApp } from "../context/Context";
 import { Link } from "react-router-dom";
 
@@ -36,7 +36,7 @@ export const Forms = () => {
 
   return (
     <div className="w-full h-screen relative	 bg-gray-300 flex items-center  ">
-      <div className="mx-auto w-2/5 px-7  bg-black-example  rounded-md  md:px-2 md:w-3/4">
+      <div className="mx-auto w-2/5 px-7  bg-black-example  rounded-md  md:px-3 md:w-3/4">
         <h1 className="text-2xl font-bold  text-slate-200 	mt-5">
           Formulario
         </h1>
