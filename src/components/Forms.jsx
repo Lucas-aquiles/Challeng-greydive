@@ -3,7 +3,7 @@ import data from "../assets/items.json";
 import { Formik } from "formik";
 import { Inputs } from "../hook/Inputs";
 import { db } from "../api/firebase-config";
-import {  addDoc, collection } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import { contextApp } from "../context/Context";
 import { Link } from "react-router-dom";
 
@@ -37,9 +37,7 @@ export const Forms = () => {
   return (
     <div className="w-full h-screen relative	 bg-gray-300 flex items-center  ">
       <div className="mx-auto w-2/5 px-7  bg-black-example  rounded-md  md:px-3 md:w-3/4">
-        <h1 className="text-2xl font-bold  text-slate-200 	mt-5">
-          Formulario
-        </h1>
+        <h1 className="text-2xl font-bold  text-slate-200 	mt-5">Formulario</h1>
 
         <Formik
           initialValues={{
@@ -52,24 +50,26 @@ export const Forms = () => {
           validate={(values) => {
             const errors = {};
             if (!values.full_name) {
-              errors.full_name = 'Required';
+              errors.full_name = "Required";
             } else if (values.full_name.length > 15) {
-              errors.full_name = 'Must be 15 characters or less';
+              errors.full_name = "Must be 15 characters or less";
             }
 
             if (!values.email) {
-              errors.email = 'Required';
-            } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-              errors.email = 'Invalid email address';
+              errors.email = "Required";
+            } else if (
+              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+            ) {
+              errors.email = "Invalid email address";
             }
-            if(!values.birth_date){
-              errors.birth_date = "Required"
+            if (!values.birth_date) {
+              errors.birth_date = "Required";
             }
-            if(!values.country_of_origin){
-              errors.country_of_origin ="Required"
+            if (!values.country_of_origin) {
+              errors.country_of_origin = "Required";
             }
-            if(!values.terms_and_conditions){
-              errors.terms_and_conditions = "Required"
+            if (!values.terms_and_conditions) {
+              errors.terms_and_conditions = "Required";
             }
             return errors;
           }}
@@ -93,7 +93,10 @@ export const Forms = () => {
             isSubmitting,
             /* and other goodies */
           }) => (
-            <form  className=" flex flex-col outline-none"   onSubmit={handleSubmit}>
+            <form
+              className=" flex flex-col outline-none"
+              onSubmit={handleSubmit}
+            >
               {arrayState?.map((e) => (
                 <div key={e.name}>
                   <p className=" text-1xl my-1 text-slate-300">{e.label} </p>
@@ -104,13 +107,10 @@ export const Forms = () => {
                     onBlur={handleBlur}
                     value={e.name}
                     options={e.options}
-                    
                   />
-                  {errors[e.name]  ? (
-                  <p className="text-green-example">{errors[e.name]}</p>
-                ) : null}
-                
-
+                  {errors[e.name] ? (
+                    <p className="text-green-example">{errors[e.name]}</p>
+                  ) : null}
                 </div>
               ))}
 
@@ -142,7 +142,6 @@ export const Forms = () => {
           >
             <div className="mx-auto flex items-center w-4/6 h-4/6 flex-col mt-10  md:mt-5">
               <h3 className=" text-2xl  text-slate-300 md:text-xs md:pl-4">
-                {" "}
                 Tus respuestas fueron enviadas
               </h3>
 
@@ -150,8 +149,7 @@ export const Forms = () => {
                 className=" text-2xl rounded-3xl text-slate-300 hover:bg-green-example p-2 mt-8 md:text-xs"
                 to="/information"
               >
-                {" "}
-                Ir a resultados{" "}
+                Ir a resultados
               </Link>
             </div>
           </div>
