@@ -35,8 +35,8 @@ export const Forms = () => {
   };
 
   return (
-    <div className="w-full h-screen relative	 bg-gray-300 flex items-center ">
-      <div className="mx-auto w-2/5 px-7  bg-black-example  rounded-md">
+    <div className="w-full h-screen relative	 bg-gray-300 flex items-center  ">
+      <div className="mx-auto w-2/5 px-7  bg-black-example  rounded-md  md:px-2 md:w-3/4">
         <h1 className="text-2xl font-bold  text-slate-200 	mt-5">
           Formulario
         </h1>
@@ -140,14 +140,14 @@ export const Forms = () => {
             }`}
             onClick={stopProp}
           >
-            <div className="mx-auto flex items-center w-4/6 h-4/6 flex-col mt-10 ">
-              <h3 className=" text-2xl  text-slate-300">
+            <div className="mx-auto flex items-center w-4/6 h-4/6 flex-col mt-10  md:mt-5">
+              <h3 className=" text-2xl  text-slate-300 md:text-xs md:pl-4">
                 {" "}
                 Tus respuestas fueron enviadas
               </h3>
 
               <Link
-                className=" text-2xl rounded-3xl text-slate-300 hover:bg-green-example p-2 mt-8"
+                className=" text-2xl rounded-3xl text-slate-300 hover:bg-green-example p-2 mt-8 md:text-xs"
                 to="/information"
               >
                 {" "}
