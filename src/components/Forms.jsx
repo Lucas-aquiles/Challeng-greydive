@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import data from "../assets/items.json";
 import { Formik } from "formik";
-import { Inputs } from "../hook/Inputs";
+import { Inputs } from "../customElements/Inputs";
 import { db } from "../api/firebase-config";
 import { addDoc, collection } from "firebase/firestore";
 import { contextApp } from "../context/Context";
